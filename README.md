@@ -96,7 +96,7 @@ boldPassage(word, text);
 Expected Output: "<p><b>hello</b> there</p>"
 
 
-Described mostUsedWords()
+Describe: mostUsedWords()
 
 Test: "It should return the words in the passage sorted alphabetically." 
 Code:
@@ -115,3 +115,13 @@ Code:
 const passage = "What am am am I I doing today?"
 mostUsedWords(text);
 Expected Output: [[3, am],[2, i],[1, doing],[1, today],[1, what]]
+
+
+Describe: omitOffensiveWords()
+
+Test: "It should not return any offensive words as defined." 
+Code:
+const passage = "What are you doing today, you zoinks, muppeteer, biffaroni, loopdaloop!" 
+mostUsedWords(text);
+Expected Output: "What are you doing today, you"
+

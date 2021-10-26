@@ -4,6 +4,19 @@ function noInputtedWord(word, text) {
   return ((text.trim().length === 0) || (word.trim().length === 0));
 }
 
+function removePunctuation(text) {
+  const punctArray = [",", ".", ";", ":", "?", "!", "-"];
+  const removePunct = text.split("")
+  let noPunctArray = []
+  removePunct.forEach(function(character) {
+    if (!(punctArray.includes(character))) { 
+    noPunctArray.push(character)
+    }
+  });
+  return noPunctArray.join("");
+  console.log(noPunctArray)
+};
+
 // Business Logic
 
 function wordCounter(text) {
@@ -87,3 +100,23 @@ $(document).ready(function(){
     $("#bolded-passage").html(boldPassage(word, passage));
   });
 });
+
+
+
+
+
+// function noPunct(eachCharacterArray) {
+//   const punctArray = [",", ".", ";", ":", "?", "!", "-"];
+//   if (punctArray.includes(eachCharacterArray.at(-1))) {
+//     eachCharacterArray.pop();
+//   }
+//   eachCharacterArray.forEach(function(char) {
+//     if (punctArray.includes(char)) {
+//       eachCharacterArray.splice(eachCharacterArray.indexOf(char), 1);
+//     } 
+//   });
+//   return eachCharacterArray.join("")
+// }
+
+
+
