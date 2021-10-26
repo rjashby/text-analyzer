@@ -109,3 +109,9 @@ Code:
 const passage = "What am am am I I doing today?"
 mostUsedWords(text);
 Expected Output: [[3, am],[1, doing],[2, i],[1, today],[1, what]]
+
+Test: "It should return the number of times each word occurs in order, most to least."
+Code:
+const passage = "What am am am I I doing today?"
+mostUsedWords(text);
+Expected Output: [[3, am],[2, i],[1, doing],[1, today],[1, what]]

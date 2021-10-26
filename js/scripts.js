@@ -47,6 +47,8 @@ function mostUsedWords(text) {
       countArray.push([wordCount, word]);
       wordCount = 1;
     }
+  countArray.sort();
+  countArray.reverse();
   });
   console.log(countArray);
 };
