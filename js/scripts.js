@@ -7,9 +7,8 @@ function noInputtedWord(word, text) {
 // Business Logic
 
 function wordCounter(text) {
-  if (noInputtedWord(word, text)) {
+  if (text.trim().length === 0) {
     return 0;
-  }
   }
   let wordCount = 0;
   const wordArray = text.split(" ");
@@ -20,8 +19,6 @@ function wordCounter(text) {
   });
   return wordCount;
 }
-
-// wordCounter() function omitted for brevity.
 
 function numberOfOccurrencesInText(word, text) {
   if (noInputtedWord(word, text)) {
@@ -37,11 +34,25 @@ function numberOfOccurrencesInText(word, text) {
   return wordCount;
 }
 
+function mostUsedWords(text) {
+  text = text.toLowerCase();
+  let wordArray = text.split(" ");
+    console.log(wordArray.sort());
+
+  
+};
+
+
+// UI Logic
+
 function boldPassage(word, text) {
+  if (noInputtedWord(word, text)) {
+    return "";
+  }
   let htmlString = "<p>";
   let textArray = text.split(" ");
   textArray.forEach(function(element, index) {
-    if (word === element) {
+    if (element.toLowerCase().includes(word.toLowerCase())) {
       htmlString = htmlString.concat("<b>" + element + "</b>");
     } else {
       htmlString = htmlString.concat(element);
@@ -52,8 +63,6 @@ function boldPassage(word, text) {
   });
   return htmlString + "</p>";
 }
-
-// UI Logic
 
 $(document).ready(function(){
   $("form#word-counter").submit(function(event){
@@ -67,5 +76,3 @@ $(document).ready(function(){
     $("#bolded-passage").html(boldPassage(word, passage));
   });
 });
-
-
