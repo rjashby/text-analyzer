@@ -66,6 +66,37 @@ function mostUsedWords(text) {
   console.log(countArray);
 };
 
+// function omitOffensiveWords(text) {
+//   const dirtyWords = ["zoinks", "muppeteer", "biffaroni", "loopdaloop"];
+//   let noPunctuation = removePunctuation(text);
+//   noPunctuation.toLowerCase();
+//   const dirtyArray = noPunctuation.split(" ");
+//   let cleanArray = [];
+//   dirtyArray.forEach(function(word) {
+//     if (!(dirtyWords.includes(word))) {
+//       cleanArray.push(word);
+//     }
+//   });
+//   console.log(cleanArray.join(" "))
+//   return cleanArray.join(" ")
+// }
+
+function omitOffensiveWords(text) {
+  let wordArray = text.toLowerCase().split(" ");
+  wordArray.forEach(function(word, index) {
+    if (word.includes("zoinks")) {
+      wordArray.splice(index, 1, "censored");
+    }
+  })
+  console.log(wordArray)
+}
+
+
+function (text)
+if text includes zoinks
+  splice()
+else if text incles muppeteer
+
 
 // UI Logic
 

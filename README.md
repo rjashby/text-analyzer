@@ -119,9 +119,15 @@ Expected Output: [[3, am],[2, i],[1, doing],[1, today],[1, what]]
 
 Describe: omitOffensiveWords()
 
+Test: "It should return a boolean whether offensive words as defined are present."
+Code:
+const passage = "What are you doing today, you zoinks, muppeteer, biffaroni, loopdaloop!"
+omitOffensiveWords()
+Expected Output: true
+
 Test: "It should not return any offensive words as defined." 
 Code:
 const passage = "What are you doing today, you zoinks, muppeteer, biffaroni, loopdaloop!" 
-mostUsedWords(text);
+omitOffensiveWords(text);
 Expected Output: "What are you doing today, you"
 
