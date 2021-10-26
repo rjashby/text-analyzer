@@ -82,6 +82,7 @@ function mostUsedWords(text) {
 // }
 
 function omitOffensiveWords(text) {
+  const wordsToOmit = ["zoinks", "muppeteer", "biffaroni", "loopdaloop"];
   let wordArray = text.toLowerCase().split(" ");
   wordArray.forEach(function(word, index) {
     if (word.includes("zoinks")) {
