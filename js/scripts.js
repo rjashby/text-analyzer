@@ -37,9 +37,18 @@ function numberOfOccurrencesInText(word, text) {
 function mostUsedWords(text) {
   text = text.toLowerCase();
   let wordArray = text.split(" ");
-    console.log(wordArray.sort());
-
-  
+  wordArray.sort();
+  let wordCount = 1;
+  let countArray = [];
+  wordArray.forEach(function(word, index) {
+    if (word === wordArray[index+1]) {
+      wordCount ++;
+    } else {
+      countArray.push([wordCount, word]);
+      wordCount = 1;
+    }
+  });
+  console.log(countArray);
 };
 
 

@@ -95,11 +95,17 @@ const text = "hello there";
 boldPassage(word, text);
 Expected Output: "<p><b>hello</b> there</p>"
 
+
 Described mostUsedWords()
 
-Test: "It should sort the words in the passage alphabetically." 
+Test: "It should return the words in the passage sorted alphabetically." 
 Code:
 const passage = "What are you doing today" 
 mostUsedWords(text);
 Expected Output: "are, doing, today, what, you"
 
+Test: "It should return the number of times each word occurs."
+Code:
+const passage = "What am am am I I doing today?"
+mostUsedWords(text);
+Expected Output: [[3, am],[1, doing],[2, i],[1, today],[1, what]]
