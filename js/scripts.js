@@ -1,7 +1,12 @@
 // Utility Logic
 
-function noInputtedWord(word, text) {
-  return ((text.trim().length === 0) || (word.trim().length === 0));
+function noInputtedWord() {
+  for (let i=0; i < arguments.length; i++) {
+    if (arguments[i].trim().length === 0) {
+      return true;
+    }
+  }
+  return false;
 }
 
 function removePunctuation(text) {
@@ -91,9 +96,7 @@ function omitOffensiveWords(text) {
   })
   console.log(wordArray)
 }
-
-
-function (text)
+ 
 if text includes zoinks
   splice()
 else if text incles muppeteer
