@@ -52,6 +52,36 @@ function numberOfOccurrencesInText(word, text) {
   return wordCount;
 }
 
+function offensive(text) {
+  const wordsToOmit = ["zoinks", "muppeteer", "biffaroni", "loopdaloop"];
+  let wordArray = text.toLowerCase().split(" ");
+  let newArray = [];
+  wordArray.forEach(function(word) {
+    if (word.includes("zoinks")) {
+      newArray.push(word);
+    }
+  })
+  return newArray;
+}
+
+function offensive(text) {
+  const wordsToOmit = ["zoinks", "muppeteer", "biffaroni", "loopdaloop"];
+  let wordArray = text.toLowerCase().split(" ");
+  let newArray = [];
+  wordArray.forEach(function(word) {
+    if (!word.includes("zoinks")) { 
+      newArray.push(word);
+    // } else if (!word.includes("muppeteer")) { 
+    //   newArray.push(word);
+    // } else if (!word.includes("biffaroni")) { 
+    //   newArray.push(word);
+    // } else if (!word.includes("loopdaloop")) { 
+    //   newArray.push(word);
+    }
+  return newArray;
+  })
+}
+
 function mostUsedWords(text) {
   text = text.toLowerCase();
   let wordArray = text.split(" ");
