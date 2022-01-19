@@ -46,6 +46,22 @@ function wordCounter(text) {
   return wordCount;
 }
 
+// USING NO INPUTTED WORD UPDATE
+
+function wordCounter(text) {
+  if (noInputtedWord(text)) {
+    return 0;
+  }
+  let wordCount = 0;
+  const wordArray = text.split(" ");
+  wordArray.forEach(function(element) {
+    if (!Number(element)) {
+      wordCount++;
+    }
+  });
+  return wordCount;
+}
+
 function numberOfOccurrencesInText(word, text) {
   if (noInputtedWord(word, text)) {
     return 0;
@@ -77,6 +93,18 @@ function offensive(text) {
   let wordArray = text.toLowerCase().split(" ");
   let newArray = [];
   wordArray.forEach(function(word) {
+    if (word !== "zoinks" && word !== "muppeteer" && word !== "biffaroni" && word !== "loopdaloop") { 
+      newArray.push(word);
+    }
+  })
+  return newArray.join(" ");
+}
+
+function offensive(text) {
+  const wordsToOmit = ["zoinks", "muppeteer", "biffaroni", "loopdaloop"];
+  let wordArray = text.toLowerCase().split(" ");
+  let newArray = [];
+  wordArray.forEach(function(word) {
     if (!word.includes("zoinks")) { 
       newArray.push(word);
     // } else if (!word.includes("muppeteer")) { 
@@ -90,10 +118,9 @@ function offensive(text) {
   })
 }
 
-function mostUsedWords(text) {
+function mostUsedWords(text) { 
   text = text.toLowerCase();
-  let wordArray = text.split(" ");
-  wordArray.sort();
+  let wordArray = text.split(" ").sort();
   let wordCount = 1;
   let countArray = [];
   wordArray.forEach(function(word, index) {
@@ -103,9 +130,9 @@ function mostUsedWords(text) {
       countArray.push([wordCount, word]);
       wordCount = 1;
     }
-  countArray.sort();
-  countArray.reverse();
+  countArray.sort().reverse();
   });
+  // let result = countArray.filter(wordCount => wordCount.length >= 2);
   console.log(countArray);
 };
 
