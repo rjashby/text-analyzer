@@ -9,6 +9,14 @@ function noInputtedWord() {
   return false;
 }
 
+// ORIGINAL
+
+function noInputtedWord(word, text) {
+  return ((text.trim().length === 0) || (word.trim().length === 0));
+}
+
+// REMOVE PUNCTUATION 
+
 function removePunctuation(text) {
   const punctArray = [",", ".", ";", ":", "?", "!", "-"];
   const removePunct = text.split("")
@@ -101,6 +109,8 @@ function mostUsedWords(text) {
   console.log(countArray);
 };
 
+// FOR LOOP
+
 function firstInstanceOfWord(word, text) {
   const textArray = text.split(" ");
   for (let i = 0; i < textArray.length; i++) {
@@ -110,6 +120,20 @@ function firstInstanceOfWord(word, text) {
     }
   }
   return -1;
+}
+
+// FOR EACH
+
+function firstInstanceOfWord(word, text) {
+  const textArray = text.split(" ");
+  let position = -1;
+  textArray.forEach(function(element, index) {
+    console.log(index);
+    if ((word === element) && (position === -1)) {
+      position = index;
+    }
+  });
+  return position;
 }
 
 // function omitOffensiveWords(text) {
