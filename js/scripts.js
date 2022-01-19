@@ -57,11 +57,11 @@ function offensive(text) {
   let wordArray = text.toLowerCase().split(" ");
   let newArray = [];
   wordArray.forEach(function(word) {
-    if (word.includes("zoinks")) {
+    if (!word.includes("zoinks")) { 
       newArray.push(word);
     }
   })
-  return newArray;
+  return newArray.join(" ");
 }
 
 function offensive(text) {
@@ -101,6 +101,17 @@ function mostUsedWords(text) {
   console.log(countArray);
 };
 
+function firstInstanceOfWord(word, text) {
+  const textArray = text.split(" ");
+  for (let i = 0; i < textArray.length; i++) {
+    console.log(i);
+    if (word === textArray[i]) {
+      return i;
+    }
+  }
+  return -1;
+}
+
 // function omitOffensiveWords(text) {
 //   const dirtyWords = ["zoinks", "muppeteer", "biffaroni", "loopdaloop"];
 //   let noPunctuation = removePunctuation(text);
@@ -116,20 +127,20 @@ function mostUsedWords(text) {
 //   return cleanArray.join(" ")
 // }
 
-function omitOffensiveWords(text) {
-  const wordsToOmit = ["zoinks", "muppeteer", "biffaroni", "loopdaloop"];
-  let wordArray = text.toLowerCase().split(" ");
-  wordArray.forEach(function(word, index) {
-    if (word.includes("zoinks")) {
-      wordArray.splice(index, 1, "censored");
-    }
-  })
-  console.log(wordArray)
-}
+// function omitOffensiveWords(text) {
+//   const wordsToOmit = ["zoinks", "muppeteer", "biffaroni", "loopdaloop"];
+//   let wordArray = text.toLowerCase().split(" ");
+//   wordArray.forEach(function(word, index) {
+//     if (word.includes("zoinks")) {
+//       wordArray.splice(index, 1, "censored");
+//     }
+//   })
+//   console.log(wordArray)
+// }
  
-if text includes zoinks
-  splice()
-else if text incles muppeteer
+// if text includes zoinks
+//   splice()
+// else if text incles muppeteer
 
 
 // UI Logic
