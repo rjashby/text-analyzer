@@ -124,16 +124,15 @@ function mostUsedWords(text) {
   let wordCount = 1;
   let countArray = [];
   wordArray.forEach(function(word, index) {
+    let result = countArray.sort().reverse();
     if (word === wordArray[index+1]) {
       wordCount ++;
     } else {
       countArray.push([wordCount, word]);
       wordCount = 1;
     }
-  countArray.sort().reverse();
   });
-  // let result = countArray.filter(wordCount => wordCount.length >= 2);
-  console.log(countArray);
+  return result.slice(0, 3);
 };
 
 // FOR LOOP
