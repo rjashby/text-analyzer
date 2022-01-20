@@ -105,14 +105,8 @@ function offensive(text) {
   let wordArray = text.toLowerCase().split(" ");
   let newArray = [];
   wordArray.forEach(function(word) {
-    if (!word.includes("zoinks")) { 
+    if (!word.includes("zoinks") || !word.includes("muppeteer") || !word.includes("biffaroni") || !word.includes("loopdaloop")) { 
       newArray.push(word);
-    // } else if (!word.includes("muppeteer")) { 
-    //   newArray.push(word);
-    // } else if (!word.includes("biffaroni")) { 
-    //   newArray.push(word);
-    // } else if (!word.includes("loopdaloop")) { 
-    //   newArray.push(word);
     }
   return newArray;
   })
