@@ -34,6 +34,11 @@ function removePunctuation(text) {
   return text.replace(/[^\w\s]|_/g, "").replace(/\s+/g, " ");
 }
 
+
+function removePunctuation(text) {
+  return text.replace(/[!"#$%&'()*+,-./:;<=>?@[\]^_`{|}~]/g, '');
+}
+
 // Business Logic
 
 function wordCounter(text) {
