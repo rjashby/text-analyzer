@@ -30,6 +30,10 @@ function removePunctuation(text) {
   console.log(noPunctArray)
 };
 
+function removePunctuation(text) {
+  return text.replace(/[^\w\s]|_/g, "").replace(/\s+/g, " ");
+}
+
 // Business Logic
 
 function wordCounter(text) {
