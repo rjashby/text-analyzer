@@ -108,7 +108,7 @@ function offensive(text) {
     if (!word.includes("zoinks") || !word.includes("muppeteer") || !word.includes("biffaroni") || !word.includes("loopdaloop")) { 
       newArray.push(word);
     }
-  return newArray;
+  return newArray.join(" ");
   })
 }
 
