@@ -76,16 +76,19 @@ function numberOfOccurrencesInText(word, text) {
   return wordCount;
 }
 
-function offensive(text) {
-  const wordsToOmit = ["zoinks", "muppeteer", "biffaroni", "loopdaloop"];
-  let wordArray = text.toLowerCase().split(" ");
-  let newArray = [];
-  wordArray.forEach(function(word) {
-    if (!word.includes("zoinks")) { 
-      newArray.push(word);
+function omitOffensiveWords(text) {
+  const dirtyWords = ["zoinks", "muppeteer", "biffaroni", "loopdaloop"];
+  // let noPunctuation = removePunctuation(text);
+  // noPunctuation.toLowerCase();
+  // const dirtyArray = noPunctuation.split(" ");
+  let dirtyArray = text.toLowerCase().split(" ");
+  let cleanArray = [];
+  dirtyArray.forEach(function(word) {
+    if (!(dirtyWords.includes(word))) {
+      cleanArray.push(word);
     }
-  })
-  return newArray.join(" ");
+  });
+  return cleanArray.join(" ");
 }
 
 function offensive(text) {
@@ -155,21 +158,6 @@ function firstInstanceOfWord(word, text) {
   });
   return position;
 }
-
-// function omitOffensiveWords(text) {
-//   const dirtyWords = ["zoinks", "muppeteer", "biffaroni", "loopdaloop"];
-//   let noPunctuation = removePunctuation(text);
-//   noPunctuation.toLowerCase();
-//   const dirtyArray = noPunctuation.split(" ");
-//   let cleanArray = [];
-//   dirtyArray.forEach(function(word) {
-//     if (!(dirtyWords.includes(word))) {
-//       cleanArray.push(word);
-//     }
-//   });
-//   console.log(cleanArray.join(" "))
-//   return cleanArray.join(" ")
-// }
 
 // function omitOffensiveWords(text) {
 //   const wordsToOmit = ["zoinks", "muppeteer", "biffaroni", "loopdaloop"];
