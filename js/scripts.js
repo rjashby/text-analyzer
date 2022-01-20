@@ -103,17 +103,17 @@ function offensive(text) {
   return newArray.join(" ");
 }
 
-function offensive(text) {
-  const wordsToOmit = ["zoinks", "muppeteer", "biffaroni", "loopdaloop"];
-  let wordArray = text.toLowerCase().split(" ");
-  let newArray = [];
-  wordArray.forEach(function(word) {
-    if (!word.includes("zoinks") || !word.includes("muppeteer") || !word.includes("biffaroni") || !word.includes("loopdaloop")) { 
-      newArray.push(word);
-    }
-  return newArray.join(" ");
-  })
-}
+// function offensive(text) {
+//   const wordsToOmit = ["zoinks", "muppeteer", "biffaroni", "loopdaloop"];
+//   let wordArray = text.toLowerCase().split(" ");
+//   let newArray = [];
+//   wordArray.forEach(function(word) {
+//     if (!word.includes("zoinks") || !word.includes("muppeteer") || !word.includes("biffaroni") || !word.includes("loopdaloop")) { 
+//       newArray.push(word);
+//     }
+//   return newArray.join(" ");
+//   })
+// }
 
 function mostUsedWords(text) { 
   text = text.toLowerCase();
